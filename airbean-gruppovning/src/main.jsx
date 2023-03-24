@@ -5,7 +5,7 @@ import './index.css'
 
 import { legacy_createStore } from 'redux';
 import { Provider } from 'react-redux';
-import reducer from './reducers/counterReducer';
+
 
 
 const store = legacy_createStore(
