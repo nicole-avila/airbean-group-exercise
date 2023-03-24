@@ -9,7 +9,8 @@ import { Provider } from 'react-redux';
 
 
 const store = legacy_createStore(
-  reducer,
+
+  
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() // Används för att få igång våran Redux devtools
 );
 
