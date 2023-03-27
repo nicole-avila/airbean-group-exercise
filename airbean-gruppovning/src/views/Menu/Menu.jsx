@@ -1,6 +1,7 @@
+import './Menu.css'
 import React from 'react'
 
-function Cart() {
+function Menu() {
   
     return (
         <>
@@ -9,4 +10,4 @@ function Cart() {
   )
 }
 
-export default Cart;
+export default Menu;

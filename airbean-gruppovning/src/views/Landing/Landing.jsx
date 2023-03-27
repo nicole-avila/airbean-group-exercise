@@ -1,3 +1,4 @@
+import './Landing.css'
 import React from 'react'
 
 function Landing() {

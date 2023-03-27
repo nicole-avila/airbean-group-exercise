@@ -1,6 +1,7 @@
+import './Status.css'
 import React from 'react'
 
-function About() {
+function Status() {
   
     return (
         <>
@@ -9,4 +10,4 @@ function About() {
   )
 }
 
-export default About;
+export default Status;
