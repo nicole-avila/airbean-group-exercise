@@ -4,8 +4,10 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import MenuComponent from '../../components/menuComponent/MenuComponent';
 import Footer from '../../components/footer/Footer';
+// import { useNavigate } from 'react-router-dom';
 
 function Menu() {
+  // const navigate = useNavigate();
 
   const [CoffeMenu, setCoffeMenu] = useState([])
 
@@ -19,6 +21,10 @@ function Menu() {
         }
         apiCoffeMeny()
     },[]);
+
+    // function navigateToNav(){
+    //   navigate('/nav');
+    // }
 
      const Menu = CoffeMenu.map((item)=>{
        return <MenuComponent  item = { item} key={ item.id}/>
