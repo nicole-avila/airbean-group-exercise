@@ -30,9 +30,7 @@ function Menu() {
           {Menu}
           <Footer/>
         </section>
-
-        
   )
 }
 
-export default Menu;
+export default Menu
