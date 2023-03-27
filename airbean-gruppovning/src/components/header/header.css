@@ -1,0 +1,7 @@
+.main-header {
+    width: 375px;
+    height: 113px;
+    background-image: url('../../../src/assets/graphics/graphics-header.svg');
+    display: flex;
+    align-items: center;
+}
