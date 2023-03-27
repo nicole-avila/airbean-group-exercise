@@ -3,8 +3,7 @@ import React from 'react'
 
 function Nav() {
   
-  
-    return (
+      return (
         <>
         <article className='nav-article'>
         <header className='nav-header'> 
