@@ -1,12 +1,20 @@
 import './Landing.css'
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
+
 
 function Landing() {
-  
+
+    const navigate = useNavigate()
+
+  function handleClick(){
+    navigate('/menu')
+  }
+
     return (
         <>
 
-        <article className='landing-article'>
+        <article onClick={handleClick} className='landing-article'>
 
         <img src="./src/assets/graphics/intro-graphic-left.svg" alt="" />
 
