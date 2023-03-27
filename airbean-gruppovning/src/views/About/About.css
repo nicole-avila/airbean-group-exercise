@@ -1,0 +1,24 @@
+.about-article {
+    width: 375px;
+    height: 1061px;
+    background-color: #F3E4E1;
+}
+
+.about-header {
+    width: 375px;
+    height: 113px;
+    background-image: url('../../../src/assets/graphics/graphics-header.svg');
+    display: flex;
+    align-items: center;
+}
+
+.about-roundbox {
+    background-color: #fdfdfd ;
+    margin: 1rem;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
