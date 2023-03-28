@@ -1,16 +1,7 @@
 .main-header {
-    width: 375px;
-    height: 113px;
+    min-width: 375px;
+    min-height: 113px;
     background-image: url('../../../src/assets/graphics/graphics-header.svg');
-}
-
-.roundbox {
-    background-color: lightgray ;
-    margin: 1rem;
-    border-radius: 50%;
-    width: 48px;
-    height: 48px;
     display: flex;
-    justify-content: center;
     align-items: center;
-}
+} 

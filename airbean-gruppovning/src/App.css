@@ -29,10 +29,24 @@ font-weight: 600;
   box-sizing: border-box;
   padding: 0px;
   margin: 0px;
+ /*  width: 100%; */
 }
 
 #root {
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+}
+.button {
+  width: 184px;
+  height: 55px;
+  left: 98px;
+  top: 530px;
+  background: #FFFFFF;
+  border-radius: 50px;
+  margin: 4.3rem auto;
+  font-family: 'PT Serif';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 120%;
+  border: none;
 }
