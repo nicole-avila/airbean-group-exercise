@@ -6,7 +6,6 @@ import Landing from './views/Landing/Landing'
 import Nav from './views/Nav/Nav'
 import Menu from './views/Menu/Menu'
 import About from './views/About/About'
-import Cart from './views/Cart/Cart'
 import Status from './views/Status/Status'
 import Error from './views/Error/Error'
 
@@ -31,11 +30,6 @@ function App() {
     {
       path: '/about',
       element: <About />,
-      errorElement: <Error />
-    },
-    {
-      path: '/cart',
-      element: <Cart />,
       errorElement: <Error />
     },
     {

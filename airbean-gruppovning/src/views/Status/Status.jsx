@@ -3,8 +3,9 @@ import './Status.css'
 import drone from '../../assets/graphics/drone.svg'
 import { useNavigate } from 'react-router-dom'
 
-function Status() {
-
+function Status(props) {
+  /* console.log(props.orderNumber) */
+  
   const navigate = useNavigate();
 
   function goToLanding() {
@@ -14,7 +15,7 @@ function Status() {
     return (
         <div className='statusBody'>
           <section className='satus__content'>
-              <p className='status__text'>Odernummer {}</p>
+              <p className='status__text'>Ordernummer {}</p>
               <img className='status__img' src= {drone} alt="image of a black color drone holding a white cup" />
               <h3 className='status__title'>Din beställning är på väg!</h3>
               <p>{} minuter</p>
