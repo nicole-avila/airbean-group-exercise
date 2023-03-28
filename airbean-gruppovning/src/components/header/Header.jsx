@@ -16,7 +16,6 @@ function handleCart() {
 }
 
 function openNav(){
-
   navigate('/nav')
 
 }
