@@ -1,7 +1,7 @@
 .statusBody {
     background: #E5674E;
-    width: 100vw;
-    height: 100vh;
+    min-width: 375px;
+    min-height: 667px;
     text-align: center;
     color: #ffffff;
     display: flex;
@@ -14,8 +14,11 @@
     margin: auto;
 }
 .status__text {
-    margin-bottom: 3rem;
-
+    margin: 3.8rem auto 3rem;
+}
+.status__img {
+    width: 70%;
+    margin: auto;
 }
 .status__title {
     width: 279px;
