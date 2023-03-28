@@ -18,12 +18,10 @@ function openNav(){
         <> 
         
         <header className='main-header'>
-        <div className='roundbox'> <img src="../../../src/assets/graphics/navicon.svg" alt="" /></div>
+          <div className='roundbox' onClick={ openNav }> <img src="../../../src/assets/graphics/navicon.svg" alt="" /></div>
           <article className='iconCart'>
             <IconCart/>
           </article>
-        
-        <div className='roundbox' onClick={ openNav }> <img src="../../../src/assets/graphics/navicon.svg" alt="" /></div>
         </header>
         </>
   )
