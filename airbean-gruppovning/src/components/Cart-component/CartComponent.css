@@ -1,0 +1,23 @@
+.cart-square{
+    background-color: hotpink;
+    width: 341px;
+    height: 565.77px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cart-triangle{
+    width: 0; 
+    height: 0; 
+    border-left: 16px solid transparent;
+    border-right: 16px solid transparent;  
+    border-bottom: 16px solid hotpink; 
+    margin-right:1rem;
+}
+.cart-triangle-container{
+    width:100%;
+    display: flex;
+    align-items: right;
+    justify-content: right;
+}
