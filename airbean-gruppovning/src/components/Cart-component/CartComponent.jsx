@@ -1,6 +1,49 @@
 import './CartComponent.css';
+import React from 'react'
+/* import { useState } from 'react';
+import { useEffect } from 'react';
+import Status from '../Status/Status';
+import { useLocation } from 'react-router-dom'; */
+
 
 function CartComponent(){
+
+    /* const cofeItem = useLocation((state) => { return state.order })
+
+
+
+    const [orderNumber, setOrder] = useState([]);
+    console.log(orderNumber)
+
+    const SendOrderNrToStatus = orderNumber.map((number)=>{
+        return < Status orderNumber = { number } />
+
+    })
+
+    useEffect(()=>{
+        async function getOrder(){
+          const body = {
+            details: {
+              order: [
+                {
+                  name: "Bryggkaffe" , //lägg in variabel från reduc?
+                  price: 39            // lägg in variabel från reduc
+                }
+              ]
+            }
+          }
+          const response = await fetch('https://airbean.awesomo.dev/api/beans/order', {
+            method: 'POST',
+            body: JSON.stringify(body),
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          })
+          const data = await response.json();
+          setOrder(data);
+        }
+        getOrder();
+      }, []); */
 
     return(
         <section className='cart'>Cart Component
