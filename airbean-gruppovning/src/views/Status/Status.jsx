@@ -3,8 +3,9 @@ import './Status.css'
 import drone from '../../assets/graphics/drone.svg'
 import { useNavigate } from 'react-router-dom'
 
-function Status() {
-
+function Status(props) {
+  /* console.log(props.orderNumber) */
+  
   const navigate = useNavigate();
 
   function goToLanding() {
