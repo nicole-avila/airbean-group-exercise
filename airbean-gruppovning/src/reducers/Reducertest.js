@@ -1,5 +1,5 @@
 const initialState = {
-    order: {}
+    order: []
 }
 
 const reducer = (state = initialState, action) => {
