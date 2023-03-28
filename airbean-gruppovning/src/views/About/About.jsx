@@ -7,6 +7,7 @@ function About() {
   
     return (
         <>
+
         <article className='about-article'>
         <Header />
         <section className='about-section'>
@@ -34,6 +35,7 @@ function About() {
 
 
         </article>
+
         </>
   )
 } 

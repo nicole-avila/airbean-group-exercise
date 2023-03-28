@@ -1,12 +1,39 @@
-.menu{
+.menuComponent{
     background: #F3E4E1;
     display: flex;
     flex-direction: column;
+    width: 100%;
+    color: rgba(47, 41, 38, 1);
+    padding: 1rem;
+}
+.menu__flex{
+    display: flex;
+}
+.menu__titles{
+    display: flex;
+}
+.menu__img{
+    width: 2rem;
+    background: rgba(47, 41, 38, 1);
+    border-radius: 50%;
+    padding: 5px;
+    margin-right: 0.5rem ;
+}
+.menu__title{
+    font-size:1.43rem ;
+    font-weight: bold;
+}
+.menu__dotted{
+    border-bottom: 1px dotted grey;
 }
 .menu__text{
-    display: flex;
+    font-size: 0.75rem;
     flex-direction: column;
+    width: 100%;
 }
-.menu_titles{
+.menu__section{
     display: flex;
+}
+.menu__price{
+    margin-left: auto;
 }
