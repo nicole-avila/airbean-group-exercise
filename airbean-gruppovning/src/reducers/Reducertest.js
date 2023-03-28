@@ -9,7 +9,7 @@ const reducer = (state = initialState, action) => {
             console.log(totalOrder);
             return{
                 ...state,
-                order: totalOrder  /* state.order = action.payload */
+
             }
         default:
             return state
