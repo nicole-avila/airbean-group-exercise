@@ -1,6 +1,6 @@
 import './Header.css'
 import React from 'react'
-import IconCart from '../IkonCart/IkonCart';
+import IconCart from '../IconCart/IconCart';
 import { useNavigate } from 'react-router-dom';
 
 
