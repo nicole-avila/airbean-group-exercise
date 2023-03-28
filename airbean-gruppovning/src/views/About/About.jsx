@@ -26,7 +26,8 @@ function About() {
         <h1 className='about-work'>VD & Grundare</h1>
         </aside>
         </section>
-
+        
+        <Footer />
         </article>
 
         </>

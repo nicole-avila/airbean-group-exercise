@@ -1,12 +1,12 @@
 .about-article {
-    width: 375px;
-    height: 1061px;
+    min-width: 375px;
+    min-height: 1061px;
     background-color: #F3E4E1;
 }
 
 .about-section {
     max-width: 375px;
-    height: 830px;
+    min-height: 830px;
     margin: 2rem;
     text-align: left;
 }
@@ -42,6 +42,7 @@
 }
 
 .about-aside {
+    margin-top: 3rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
