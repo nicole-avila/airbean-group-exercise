@@ -2,6 +2,7 @@ import './Landing.css'
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 
+
 function Landing() {
   const navigate = useNavigate();
 
@@ -13,6 +14,7 @@ function Landing() {
         <>
 
         <article className='landing-article' onClick={ goToMenu }>
+
 
         <img src="./src/assets/graphics/intro-graphic-left.svg" alt="" />
 
