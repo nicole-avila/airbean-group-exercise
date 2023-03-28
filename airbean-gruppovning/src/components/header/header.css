@@ -1,9 +1,10 @@
 .main-header {
     min-width: 375px;
-    min-height: 113px;
+    min-height: 112px;
     background-image: url('../../../src/assets/graphics/graphics-header.svg');
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 .iconCart{
    margin-left: 3rem;
