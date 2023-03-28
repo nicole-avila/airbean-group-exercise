@@ -4,13 +4,16 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Status from '../../views/Status/Status';
-
-
+import { useSelector } from 'react-redux';
 
 function CartComponent(){
 
+   /*  const fromStoreOrder = useSelector((state) => { return state.order})
+    console.log(fromStoreOrder) */
+
     const [orderNumber, setOrder] = useState([]);
     console.log(orderNumber)
+
 
     useEffect(()=>{
         async function getOrder(){
