@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import MenuComponent from '../../components/menuComponent/MenuComponent';
 import Footer from '../../components/footer/Footer';
+import Header from '../../components/header/Header';
 // import { useNavigate } from 'react-router-dom';
 
 function Menu() {
@@ -32,6 +33,7 @@ function Menu() {
   
     return (
         <section className='menu'>
+          <Header/>
           <h1 className='menuHeader'>Meny</h1>
           {Menu}
           <Footer/>
