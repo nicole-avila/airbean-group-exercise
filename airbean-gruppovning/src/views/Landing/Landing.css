@@ -1,21 +1,10 @@
-.landing {
-  background-color: #38846D;
-  width: 100vw;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.landing__img {
-  height: 100vh;
-}
 .landing-article {
     width: 375px;
     height: 667px;
     display: flex;
+    justify-content: space-between;
+    background-color: #38846D;
     align-items: center;
-    justify-content: center;
-    margin: auto;
   }
   
   .landing-logo {
