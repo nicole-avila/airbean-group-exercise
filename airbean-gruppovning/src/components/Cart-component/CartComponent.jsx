@@ -16,8 +16,8 @@ function CartComponent(){
    const orderComponent = order.map((order, index)=>{
     
     return (
-        <section className='cart-products'>
-            <h1 className='cart-products-text' key={index} >{order.name}</h1>
+        <section className='cart-products' key={index}>
+            <h1 className='cart-products-text'  >{order.name}</h1>
             <p className='cart-product-price'>{order.price}kr</p> 
             </section> 
             )
