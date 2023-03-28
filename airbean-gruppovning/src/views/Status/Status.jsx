@@ -15,7 +15,7 @@ function Status(props) {
     return (
         <div className='statusBody'>
           <section className='satus__content'>
-              <p className='status__text'>Odernummer {}</p>
+              <p className='status__text'>Ordernummer {}</p>
               <img className='status__img' src= {drone} alt="image of a black color drone holding a white cup" />
               <h3 className='status__title'>Din beställning är på väg!</h3>
               <p>{} minuter</p>
