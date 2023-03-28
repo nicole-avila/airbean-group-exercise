@@ -6,6 +6,10 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import Status from '../../views/Status/Status';
 import { useSelector } from 'react-redux';
 
+
+
+
+
 function CartComponent(){
 
    const order  = useSelector((state) => { return state.order})
@@ -59,8 +63,19 @@ function CartComponent(){
             <article className='cart-square'>
                 <h1 className='cart-heading'>Din beställning</h1>
             
+
               {orderComponent}
               
+
+            
+
+            <aside className='cart-products'>
+                <h1 className='cart-products-text'>Bryggkaffe</h1>
+                <p className='cart-product-price'>49kr</p>
+                <h1 className='cart-products-text'>Caffé Doppio</h1>
+                <p className='cart-product-price'>49kr</p>
+                </aside>
+
                 <article className='cart-container-bottom'>
                     <aside className='cart-total-container'>
                         <h2 className='cart-total'>Totalt:<p className='cart-dot'></p><span className='cart-total-price'>88kr</span></h2>
