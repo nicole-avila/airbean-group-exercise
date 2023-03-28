@@ -1,0 +1,11 @@
+.menu{
+    background: #F3E4E1;
+     min-width: 375px;
+}
+.menuHeader{
+    display: flex;
+    justify-content: center;
+    font-size: 2.625rem;
+    font-family: 'PT Serif', serif;
+
+}

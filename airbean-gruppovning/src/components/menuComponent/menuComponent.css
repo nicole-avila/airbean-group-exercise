@@ -1,0 +1,42 @@
+.menuComponent{
+    background: #F3E4E1;
+    display: flex;
+    flex-direction: column;
+    color: rgba(47, 41, 38, 1);
+    padding: 1rem;
+    width: 100%;
+    font-family: 'PT Serif', serif;
+}
+.menu__flex{
+    display: flex;
+ 
+}
+.menu__titles{
+    display: flex;
+}
+.menu__img{
+    width: 2rem;
+    background: rgba(47, 41, 38, 1);
+    border-radius: 50%;
+    padding: 5px;
+    margin-right: 0.5rem ;
+}
+.menu__title{
+    font-size:1.43rem ;
+    font-weight: bold;
+}
+.menu__dotted{
+    border-bottom: 1px dotted grey;
+    width: 3rem;
+}
+.menu__text{
+    font-size: 0.75rem;
+    flex-direction: column;
+    width: 100%;
+}
+.menu__section{
+    display: flex;
+}
+.menu__price{
+    margin-left: auto;
+}

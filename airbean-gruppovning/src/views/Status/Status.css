@@ -1,0 +1,30 @@
+.statusBody {
+    background: #E5674E;
+    min-width: 375px;
+    min-height: 667px;
+    text-align: center;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+.satus__content {
+    width: 375px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+.status__text {
+    margin: 3.8rem auto 3rem;
+}
+.status__img {
+    width: 70%;
+    margin: auto;
+}
+.status__title {
+    width: 279px;
+    font-size: 36px;
+    margin: 2.5rem auto 2rem;
+}
+.button__status {
+    background: #FFFFFF;
+}

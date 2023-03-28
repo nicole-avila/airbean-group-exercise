@@ -1,0 +1,8 @@
+.main-footer {
+    min-width: 375px;
+    min-height: 73px;
+    background-image: url('../../../src/assets/graphics/graphics-footer.svg');
+    display: flex;
+    align-items: center;
+    background-repeat: no-repeat;
+} 
