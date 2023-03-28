@@ -1,14 +1,13 @@
 import './Footer.css'
-import Footer from '../../assets/graphics/graphics-footer.svg'
+import FooterSVG from '../../assets/graphics/graphics-footer.svg'
 
 function Footer() {
 
     return (
         <div>
-            <img src= {Footer} className='footer' alt="diffrent types of leafs" />
+            <img src= {FooterSVG} className='footer' alt="diffrent types of leafs" />
         </div>
     )
 }
 
 export default Footer
-

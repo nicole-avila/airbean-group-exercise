@@ -4,8 +4,8 @@ import React from 'react'
 function Header() {
   return (
         <>
-        <header className='about-header'>
-        <div className='about-roundbox'> <img src="../../../src/assets/graphics/navicon.svg" alt="" /></div>
+        <header className='main-header'>
+        <div className='roundbox'> <img src="../../../src/assets/graphics/navicon.svg" alt="" /></div>
         </header>
         </>
   )
