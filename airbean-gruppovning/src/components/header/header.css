@@ -4,4 +4,7 @@
     background-image: url('../../../src/assets/graphics/graphics-header.svg');
     display: flex;
     align-items: center;
-} 
+}
+.iconCart{
+   margin-left: 3rem;
+}
