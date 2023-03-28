@@ -46,7 +46,7 @@ function CartComponent(){
       }, []); */
 
     return(
-        <section className='cart'>Cart Component
+        <section className='cart'>
             <aside className='cart-triangle-container'>
                 <div className='cart-triangle'></div>
             </aside>
