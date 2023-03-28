@@ -29,7 +29,7 @@ function MenuComponent(props){
                     <section className='menu__text'>
                         <section className='menu__titles'>
                             <h1 className='menu__title'>{props.item.title}</h1>
-                            <p className='menu__dotted'></p>
+                           {/*  <span className='menu__dotted'></span> */}
                             <p className='menu__title menu__price'>{props.item.price} kr</p>
                         </section>
                         <p className='menu__text'>Bryggd på månadens bönor</p>
