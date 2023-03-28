@@ -8,8 +8,8 @@ import { useSelector } from 'react-redux';
 
 function CartComponent(){
 
-   /*  const fromStoreOrder = useSelector((state) => { return state.order})
-    console.log(fromStoreOrder) */
+   const fromStoreOrder = useSelector((state) => { return state.order})
+    console.log(fromStoreOrder)
 
     const [orderNumber, setOrder] = useState([]);
     console.log(orderNumber)
