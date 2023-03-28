@@ -1,24 +1,16 @@
 import './CartComponent.css';
 import React from 'react'
-/* import { useState } from 'react';
+import { useState } from 'react';
 import { useEffect } from 'react';
-import Status from '../Status/Status';
-import { useLocation } from 'react-router-dom'; */
+import { useLocation, useNavigate } from 'react-router-dom';
+import Status from '../../views/Status/Status';
+
 
 
 function CartComponent(){
 
-    /* const cofeItem = useLocation((state) => { return state.order })
-
-
-
     const [orderNumber, setOrder] = useState([]);
     console.log(orderNumber)
-
-    const SendOrderNrToStatus = orderNumber.map((number)=>{
-        return < Status orderNumber = { number } />
-
-    })
 
     useEffect(()=>{
         async function getOrder(){
@@ -43,7 +35,14 @@ function CartComponent(){
           setOrder(data);
         }
         getOrder();
-      }, []); */
+      }, []); 
+
+      const navigate = useNavigate()
+      function sendOrderNr(){
+
+       
+
+      }
 
     return(
         <section className='cart'>
@@ -63,7 +62,7 @@ function CartComponent(){
                         <h2 className='cart-total'>Totalt:<p className='cart-dot'></p><span className='cart-total-price'>88kr</span></h2>
                     </aside>
                     <p className='cart-moms-text'>inkl moms + drönarleverans</p>
-                    <button className='button button__cart'>Take my money!</button>
+                    <button className='button button__cart' onClick={ sendOrderNr}>Take my money!</button>
                 </article>
             </article>
         </section>
