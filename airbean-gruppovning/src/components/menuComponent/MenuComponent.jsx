@@ -9,7 +9,7 @@ function MenuComponent(props){
     const dispatch  = useDispatch()
 
     const order = [{
-        title: props.item.title,
+        name: props.item.title,
         price: props.item.price
     }]
     console.log(order)

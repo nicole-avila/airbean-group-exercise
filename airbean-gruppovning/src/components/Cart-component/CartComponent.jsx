@@ -4,24 +4,33 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Status from '../../views/Status/Status';
-
-
+import { useSelector } from 'react-redux';
 
 function CartComponent(){
 
+   const order  = useSelector((state) => { return state.order})
+    console.log(order)
+
     const [orderNumber, setOrder] = useState([]);
     console.log(orderNumber)
+   const orderComponent = order.map((order, index)=>{
+    
+    return (
+        <section className='cart-products' key={index}>
+            <h1 className='cart-products-text'  >{order.name}</h1>
+            <p className='cart-product-price'>{order.price}kr</p> 
+            </section> 
+            )
+
+    })
+    console.log(orderComponent)
+
 
     useEffect(()=>{
         async function getOrder(){
           const body = {
             details: {
-              order: [
-                {
-                  name: "Bryggkaffe" , //lägg in variabel från reduc?
-                  price: 39            // lägg in variabel från reduc
-                }
-              ]
+              order: order
             }
           }
           const response = await fetch('https://airbean.awesomo.dev/api/beans/order', {
@@ -40,8 +49,6 @@ function CartComponent(){
       const navigate = useNavigate()
       function sendOrderNr(){
 
-       
-
       }
 
     return(
@@ -51,12 +58,9 @@ function CartComponent(){
             </aside>
             <article className='cart-square'>
                 <h1 className='cart-heading'>Din beställning</h1>
-            <aside className='cart-products'>
-                <h1 className='cart-products-text'>Bryggkaffe</h1>
-                <p className='cart-product-price'>49kr</p>
-                <h1 className='cart-products-text'>Caffé Doppio</h1>
-                <p className='cart-product-price'>49kr</p>
-                </aside>
+            
+              {orderComponent}
+              
                 <article className='cart-container-bottom'>
                     <aside className='cart-total-container'>
                         <h2 className='cart-total'>Totalt:<p className='cart-dot'></p><span className='cart-total-price'>88kr</span></h2>
