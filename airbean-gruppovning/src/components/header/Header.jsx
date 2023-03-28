@@ -13,13 +13,17 @@ function openNav(){
   navigate('/nav')
 
 }
+function navfromCart(){
+  navigate('/cart')
+
+}
 
   return (
         <> 
         
         <header className='main-header'>
           <div className='roundbox' onClick={ openNav }> <img src="../../../src/assets/graphics/navicon.svg" alt="" /></div>
-          <article className='iconCart'>
+          <article className='iconCart' onClick={ navfromCart}>
             <IconCart/>
           </article>
         </header>
