@@ -32,7 +32,7 @@ function Menu() {
   
     return (
         <section className='menu'>
-          <h1>Meny</h1>
+          <h1 className='menuHeader'>Meny</h1>
           {Menu}
           <Footer/>
         </section>

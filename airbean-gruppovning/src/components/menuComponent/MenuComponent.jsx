@@ -1,22 +1,44 @@
 import './menuComponent.css'
 import Addbutton from '../../assets/graphics/add.svg'
-function MenuComponent(props){
+import { useDispatch } from 'react-redux';
+import { addProduct } from '../../actions/Actiontest';
 
+function MenuComponent(props){
     console.log(props.item)
 
-    return(
-        <section className="menu">
-            
-            <section className="menu__text">
-                
-                <section className='menu_titles'>
-                    <article> <img src={Addbutton} alt="add"  className='menu__img'/> </article>
-                    <h1>{props.item.title}</h1>
-                    <p>{props.item.price}</p>
-                </section>
-                <p>Bryggd på månadens bönor</p>
+    const dispatch  = useDispatch()
 
-            </section>
+    const order = [{
+        title: props.item.title,
+        price: props.item.price
+    }]
+    console.log(order)
+
+    function saveCoffeToStore(){
+
+        dispatch(addProduct(order))
+
+    }
+
+    return(
+        <section className="menuComponent">
+               <section className='menu__flex'>
+
+                    <article onClick={ saveCoffeToStore }><img src={Addbutton} alt="add"  className='menu__img'/> </article>
+
+                    <section className='menu__text'>
+                        <section className='menu__titles'>
+                            <h1 className='menu__title'>{props.item.title}</h1>
+                            <p className='menu__dotted'></p>
+                            <p className='menu__title menu__price'>{props.item.price} kr</p>
+                        </section>
+                        <p className='menu__text'>Bryggd på månadens bönor</p>
+                    </section>
+                </section>
+                    
+                    
+
+            
             
 
         </section>
