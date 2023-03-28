@@ -16,7 +16,7 @@ function Status() {
               <img className='status__img' src= {drone} alt="image of a black color drone holding a white cup" />
               <h3 className='status__title'>Din beställning är på väg!</h3>
               <p>{} minuter</p>
-              <button className='status__btn'onClick = {goToLanding} >ok, cool!</button>
+              <button className='button button__status'onClick = {goToLanding} >ok, cool!</button>
             </section>
         </div>
   )
