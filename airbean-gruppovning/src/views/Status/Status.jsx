@@ -5,34 +5,33 @@ import { useNavigate, useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { reset } from '../../actions/Actiontest'
+import { addTime } from "../../actions/Actiontest";
 
 function Status() {
 const navigate = useNavigate();
 const location = useLocation();
 const dispatch = useDispatch();
 
-  //let ETA = location.state.orderNumber.eta
+  let ETA = location.state.orderNumber.eta
   let orderId = location.state.orderNumber.orderNr
-  let [time, setTime] = useState();
 
-  //console.log(ETA)
   console.log(orderId)
-
+  let time
+  let time2 =[{ time:time}]
+  
   useEffect(()=>{
     async function getTime(){
       const response = await fetch(`https://airbean.awesomo.dev/api/beans/order/status/${orderId}`);
       const data = await response.json()
-     
-      setTime(data.eta)
-      console.log(data.eta)
+      time = data.eta
     }
     getTime();
   },[])
-
+ console.log(time)
+ dispatch(addTime(time2))
 
   function goToLanding() {
      dispatch(reset())
-
     navigate('/')
   }
 

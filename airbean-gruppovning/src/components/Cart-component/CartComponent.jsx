@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
+
 function CartComponent(){
 
    const order  = useSelector((state) => { return state.order})

@@ -1,5 +1,6 @@
 const initialState = {
-    order: []
+    order: [],
+    time: []
 }
 
 const reducer = (state = initialState, action) => {
@@ -11,10 +12,12 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 order: totalOrder
             }
-        case 'RESET':
+        case 'ADD__TIME':
+            let minuts = state.time.concat(action.payload);
             return{
-                ...state,
-                order: state.order = []  
+                ...state.time,
+                time: minuts
+        
             }
         default:
             return state
