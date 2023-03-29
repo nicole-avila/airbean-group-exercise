@@ -71,13 +71,7 @@ function CartComponent(){
             </aside>
             <article className='cart-square'>
                 <h1 className='cart-heading'>Din beställning</h1>
-            
-
               {orderComponent}
-              
-
-            
-
             <aside className='cart-products'>
                 <h1 className='cart-products-text'>Bryggkaffe</h1>
                 <p className='cart-product-price'>49kr</p>
