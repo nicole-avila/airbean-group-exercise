@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { addProduct } from '../../actions/Actiontest';
 
 function MenuComponent(props){
-    console.log(props.item)
+    
 
     const dispatch  = useDispatch()
 
@@ -12,7 +12,7 @@ function MenuComponent(props){
         name: props.item.title,
         price: props.item.price
     }]
-    console.log(order)
+    
 
     function saveCoffeToStore(){
 
