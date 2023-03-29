@@ -10,7 +10,6 @@ function CartComponent(){
 
    const order  = useSelector((state) => { return state.order})
     const [orderNumber, setOrder] = useState([]);
-    console.log(orderNumber)
     
     const orderComponent = order.map((order, index)=>{
     
@@ -22,7 +21,7 @@ function CartComponent(){
             )
 
     })
-    useEffect(()=>{
+      useEffect(()=>{
         async function getOrder(){
           const body = {
             details: {
@@ -44,6 +43,7 @@ function CartComponent(){
 
       let totalP = 0
       function count(){
+        
            order.forEach(order => {
               totalP = totalP + order.price
           });
@@ -54,8 +54,8 @@ function CartComponent(){
 
       const navigate = useNavigate()
       function sendOrderNr(){
+        console.log(orderNumber);
         navigate('/status', {state:{orderNumber: orderNumber}})
-
       }
 
     return(

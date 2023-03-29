@@ -10,6 +10,8 @@ function Status() {
   const location = useLocation()
   let ETA = location.state.orderNumber.eta
   let orderId = location.state.orderNumber.orderNr
+  console.log(ETA)
+  console.log(orderId)
 
   const navigate = useNavigate();
 
@@ -20,7 +22,7 @@ function Status() {
     return (
         <div className='statusBody'>
           <section className='satus__content'>
-              <p className='status__text'>Ordernummer {}</p>
+              <p className='status__text'>Ordernummer: {orderId}</p>
               <img className='status__img' src= {drone} alt="image of a black color drone holding a white cup" />
               <h3 className='status__title'>Din beställning är på väg!</h3>
               <p>{} minuter</p>
