@@ -6,8 +6,6 @@ function IconCart(){
     const order  = useSelector((state) => { return state.order})
     const length = order.length;
 
-    
-
     return(
         <section className="IconBox">
             <article className="IconBox__number">{length}</article>
