@@ -6,7 +6,6 @@ import { useLocation } from 'react-router-dom'
 
 
 function Status() {
- 
 
   const location = useLocation()
   let ETA = location.state.orderNumber.eta
