@@ -10,6 +10,7 @@ function CartComponent(){
 
    const order  = useSelector((state) => { return state.order})
     const [orderNumber, setOrder] = useState([]);
+    console.log(orderNumber)
     
     const orderComponent = order.map((order, index)=>{
     
@@ -53,6 +54,7 @@ function CartComponent(){
 
       const navigate = useNavigate()
       function sendOrderNr(){
+        navigate('/status', {state:{orderNumber: orderNumber}})
 
       }
 
