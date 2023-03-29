@@ -2,8 +2,7 @@ import './CartComponent.css';
 import React from 'react'
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import Status from '../../views/Status/Status';
+import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 function CartComponent(){
@@ -44,9 +43,9 @@ function CartComponent(){
       let totalP = 0
       function count(){
         
-           order.forEach(order => {
-              totalP = totalP + order.price
-          });
+        order.forEach(order => {
+          totalP = totalP + order.price
+      });
   
       }
       count()
