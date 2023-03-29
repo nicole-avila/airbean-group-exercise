@@ -3,6 +3,8 @@ import image from '../../assets/graphics/bag.svg'
 
 function IconCart(){
 
+    
+
     return(
         <section className="IconBox">
             <article className="IconBox__number">7</article>
