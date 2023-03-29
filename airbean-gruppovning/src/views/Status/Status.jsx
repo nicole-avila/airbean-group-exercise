@@ -3,10 +3,12 @@ import './Status.css'
 import drone from '../../assets/graphics/drone.svg'
 import { useNavigate } from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
-
+import { useDispatch } from 'react-redux'
+import { reset } from '../../actions/Actiontest'
 
 function Status() {
- 
+
+  const dispatch = useDispatch()
 
   const location = useLocation()
   let ETA = location.state.orderNumber.eta
@@ -17,6 +19,8 @@ function Status() {
   const navigate = useNavigate();
 
   function goToLanding() {
+     dispatch(reset())
+
     navigate('/')
   }
 

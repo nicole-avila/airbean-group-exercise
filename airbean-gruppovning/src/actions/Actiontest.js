@@ -4,5 +4,12 @@ function addProduct(value) {
         payload: value
     }
 }
+function reset(value){
+    return{
+        type: 'RESET',
+        payload: value
+    }
+}
 
-export {addProduct}
+
+export {addProduct, reset}
