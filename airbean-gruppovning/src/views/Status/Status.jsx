@@ -2,10 +2,16 @@ import React from 'react'
 import './Status.css'
 import drone from '../../assets/graphics/drone.svg'
 import { useNavigate } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
-function Status(props) {
-  /* console.log(props.orderNumber) */
-  
+
+function Status() {
+ 
+
+  const location = useLocation()
+  let ETA = location.state.orderNumber.eta
+  let orderId = location.state.orderNumber.orderNr
+
   const navigate = useNavigate();
 
   function goToLanding() {
