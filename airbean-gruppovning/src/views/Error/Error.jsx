@@ -4,9 +4,9 @@ import React from 'react'
 function Error() {
   return (
     <>
-    <h1>Error, Error!</h1>
-    <h1>Error, Error!</h1>
-    <h1>Error, Error!</h1>
+      <h1>Error, Error!</h1>
+      <h1>Error, Error!</h1>
+      <h1>Error, Error!</h1>
     </>
   )
 }
