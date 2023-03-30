@@ -1,5 +1,6 @@
 const initialState = {
-    order: []
+    order: [],
+    orderNr: ''
 }
 
 const reducer = (state = initialState, action) => {
@@ -11,8 +12,19 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 order: totalOrder
             }
-        default:
-            return state
-    }
-}
+        case 'RESET':
+            return{
+                ...state,
+                order: state.order = []  
+            }
+        case 'UPDATE_TIME':
+            return{
+                ...state,
+                orderNr: action.payload
+            
+            }
+            default:
+                return state
+            }
+        }
 export default reducer

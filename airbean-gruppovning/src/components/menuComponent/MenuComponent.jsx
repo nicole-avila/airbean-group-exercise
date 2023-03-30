@@ -1,11 +1,9 @@
 import './menuComponent.css'
 import Addbutton from '../../assets/graphics/add.svg'
 import { useDispatch } from 'react-redux';
-import { addProduct } from '../../actions/Actiontest';
+import { addProduct } from '../../Actions/Actiontest';
 
 function MenuComponent(props){
-    
-
     const dispatch  = useDispatch()
 
     const order = [{
@@ -13,19 +11,14 @@ function MenuComponent(props){
         price: props.item.price
     }]
     
-
     function saveCoffeToStore(){
-
         dispatch(addProduct(order))
-
     }
 
     return(
         <section className="menuComponent">
                <section className='menu__flex'>
-
                     <article onClick={ saveCoffeToStore }><img src={Addbutton} alt="add"  className='menu__img'/> </article>
-
                     <section className='menu__text'>
                         <section className='menu__titles'>
                             <h1 className='menu__title'>{props.item.title}</h1>
@@ -35,12 +28,6 @@ function MenuComponent(props){
                         <p className='menu__text'>Bryggd på månadens bönor</p>
                     </section>
                 </section>
-                    
-                    
-
-            
-            
-
         </section>
     )
 }

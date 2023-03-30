@@ -2,36 +2,60 @@ import React from 'react'
 import './Status.css'
 import drone from '../../assets/graphics/drone.svg'
 import { useNavigate } from 'react-router-dom'
-import { useLocation } from 'react-router-dom'
-
+import { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { reset } from '../../Actions/Actiontest'
 
 function Status() {
- 
-
-  const location = useLocation()
-  let ETA = location.state.orderNumber.eta
-  let orderId = location.state.orderNumber.orderNr
-  console.log(ETA)
-  console.log(orderId)
-
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [saveTime, setSaveTime] = useState();
+  const [ifOrderExist, setIfOrderExist] = useState(false)
+
+  const orderNumber = useSelector((state) => { return state.orderNr })
+  console.log(orderNumber);
+
+  useEffect(() => {
+    async function getTime() {
+      const response = await fetch(`https://airbean.awesomo.dev/api/beans/order/status/${orderNumber}`);
+      const data = await response.json()
+      setSaveTime(data.eta)
+    }
+    if (orderNumber.length > 0) {
+      setIfOrderExist(!ifOrderExist)
+      getTime()
+      console.log('Det finns ingen beställning')
+    }
+  }, [])
 
   function goToLanding() {
+    dispatch(reset())
     navigate('/')
   }
 
-    return (
-        <div className='statusBody'>
-          <section className='satus__content'>
-              <p className='status__text'>Ordernummer: {orderId}</p>
-              <img className='status__img' src= {drone} alt="image of a black color drone holding a white cup" />
-              <h3 className='status__title'>Din beställning är på väg!</h3>
-              <p>{} minuter</p>
+  function backToMenu() {
+    navigate('/menu')
+  }
 
+  return (
+    <div className='statusBody'>
+      {ifOrderExist ?
+        <section className='satus__content'>
+          <p className='status__text'>Ordernummer: {orderNumber}</p>
+          <img className='status__img' src={drone} alt="image of a black color drone holding a white cup" />
+          <h3 className='status__title'>Din beställning är på väg!</h3>
+          <p> {saveTime} minuter</p>
+          <button className='button button__status' onClick={goToLanding} >ok, cool!</button>
+        </section> :
 
-              <button className='button button__status'onClick = {goToLanding} >ok, cool!</button>
-            </section>
+        <div className='noOrder'>
+          <img className='status__img-upsidedown' src={drone} alt="image of a black color drone holding a white cup" />
+          <p className='noOrder-paragraph'>Du har tyvärr ingen pågående order,<br></br> var god lägg en beställning.</p>
+          <button onClick={backToMenu} className='button button__status'>Tillbaka</button>
         </div>
+
+      }
+    </div>
   )
 }
 

@@ -5,11 +5,9 @@ import { useNavigate } from 'react-router-dom';
 import CartComponent from '../Cart-component/CartComponent';
 import { useState } from 'react';
 
-
 function Header() {
   const [isCartOpen, setIsCartOpen] = useState(false);
-
-const navigate = useNavigate()
+  const navigate = useNavigate()
 
 function handleCart() {
   setIsCartOpen(!isCartOpen);
@@ -17,11 +15,9 @@ function handleCart() {
 
 function openNav(){
   navigate('/nav')
-
 }
   return (
         <> 
-        
         <header className='main-header'>
           <div className='roundbox' onClick={ openNav }> <img src="../../../src/assets/graphics/navicon.svg" alt="" /></div>
           <article className='iconCart' onClick={handleCart}>

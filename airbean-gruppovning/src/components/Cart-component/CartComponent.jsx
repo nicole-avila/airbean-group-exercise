@@ -1,15 +1,16 @@
 import './CartComponent.css';
 import React from 'react'
-import { useState } from 'react';
 import { useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import Status from '../../views/Status/Status';
-import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { updateTime } from '../../Actions/Actiontest';
+
+
 
 function CartComponent(){
-
    const order  = useSelector((state) => { return state.order})
-    const [orderNumber, setOrder] = useState([]);
+   const dispatch = useDispatch();
+   let getData = '';
     
     const orderComponent = order.map((order, index)=>{
     
@@ -19,9 +20,16 @@ function CartComponent(){
             <p className='cart-product-price'>{order.price}kr</p> 
             </section> 
             )
-
+        
     })
       useEffect(()=>{
+
+        if (order.length)
+        {
+           getOrder()
+        } else {
+            //lägg till att den hämtar eta?
+        }
         async function getOrder(){
           const body = {
             details: {
@@ -36,26 +44,26 @@ function CartComponent(){
             }
           })
           const data = await response.json();
-          setOrder(data);
+          getData = data.orderNr;
         }
-        getOrder();
-      }, []); 
-
-      let totalP = 0
-      function count(){
+    }, []); 
+    
+    let totalP = 0
+    function count(){
         
-           order.forEach(order => {
-              totalP = totalP + order.price
-          });
-  
-      }
-      count()
-      console.log(totalP)
-
-      const navigate = useNavigate()
-      function sendOrderNr(){
-        console.log(orderNumber);
-        navigate('/status', {state:{orderNumber: orderNumber}})
+        order.forEach(order => {
+            totalP = totalP + order.price
+        });
+        
+    }
+    count()
+    console.log(totalP)
+    
+    const navigate = useNavigate()
+    function sendOrderNr(){
+        console.log(getData);
+        dispatch(updateTime(getData));
+        navigate('/status')
       }
 
     return(
@@ -65,6 +73,7 @@ function CartComponent(){
             </aside>
             <article className='cart-square'>
                 <h1 className='cart-heading'>Din beställning</h1>
+
               {orderComponent}
                 <article className='cart-container-bottom'>
                     <aside className='cart-total-container'>

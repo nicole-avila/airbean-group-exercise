@@ -1,40 +1,13 @@
-/* 
-
-Main font
-
-font-family: 'PT Serif', serif;
-font-weight: 700;
-
-Logo
-
-font-family: 'Rufina', serif;
-font-weight: 700;
-
-
-Brödtext - Landingpage
-
-font-family: 'Work Sans', sans-serif;
-font-weight: 400;
-
-
-Brödtext - About
-
-font-family: 'Work Sans', sans-serif;
-font-weight: 600;
-
-
-*/
-
 * {
   box-sizing: border-box;
   padding: 0px;
   margin: 0px;
- /*  width: 100%; */
 }
 
 #root {
   margin: 0 auto;
 }
+
 .button {
   width: 184px;
   height: 55px;
