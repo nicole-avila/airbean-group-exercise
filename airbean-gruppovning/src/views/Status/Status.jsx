@@ -34,7 +34,6 @@ const orderNumberComponent = orderNumber.map((order, index)=>{
     getTime();
   },[])
   
-  dispatch(addTime())
   
 
   function goToLanding() {
