@@ -11,6 +11,11 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 order: totalOrder
             }
+        case 'RESET':
+            return{
+                ...state,
+                order: state.order = []  
+            }
         default:
             return state
     }

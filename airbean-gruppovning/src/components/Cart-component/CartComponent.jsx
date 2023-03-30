@@ -2,22 +2,15 @@ import './CartComponent.css';
 import React from 'react'
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import Status from '../../views/Status/Status';
+import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-
-
-
-
 
 function CartComponent(){
 
    const order  = useSelector((state) => { return state.order})
-    console.log(order)
-
     const [orderNumber, setOrder] = useState([]);
-    console.log(orderNumber)
-   const orderComponent = order.map((order, index)=>{
+    
+    const orderComponent = order.map((order, index)=>{
     
     return (
         <section className='cart-products' key={index}>
@@ -27,10 +20,7 @@ function CartComponent(){
             )
 
     })
-    console.log(orderComponent)
-
-
-    useEffect(()=>{
+      useEffect(()=>{
         async function getOrder(){
           const body = {
             details: {
@@ -50,9 +40,21 @@ function CartComponent(){
         getOrder();
       }, []); 
 
+      let totalP = 0
+      function count(){
+        
+        order.forEach(order => {
+          totalP = totalP + order.price
+      });
+  
+      }
+      count()
+      console.log(totalP)
+
       const navigate = useNavigate()
       function sendOrderNr(){
-
+        console.log(orderNumber);
+        navigate('/status', {state:{orderNumber: orderNumber}})
       }
 
     return(
@@ -62,23 +64,10 @@ function CartComponent(){
             </aside>
             <article className='cart-square'>
                 <h1 className='cart-heading'>Din beställning</h1>
-            
-
               {orderComponent}
-              
-
-            
-
-            <aside className='cart-products'>
-                <h1 className='cart-products-text'>Bryggkaffe</h1>
-                <p className='cart-product-price'>49kr</p>
-                <h1 className='cart-products-text'>Caffé Doppio</h1>
-                <p className='cart-product-price'>49kr</p>
-                </aside>
-
                 <article className='cart-container-bottom'>
                     <aside className='cart-total-container'>
-                        <h2 className='cart-total'>Totalt:<p className='cart-dot'></p><span className='cart-total-price'>88kr</span></h2>
+                        <h2 className='cart-total'>Totalt:<p className='cart-dot'></p><span className='cart-total-price'>{totalP}kr</span></h2>
                     </aside>
                     <p className='cart-moms-text'>inkl moms + drönarleverans</p>
                     <button className='button button__cart' onClick={ sendOrderNr}>Take my money!</button>
