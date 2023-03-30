@@ -44,7 +44,7 @@ function CartComponent(){
             }
           })
           const data = await response.json();
-          getData = [data];
+          getData = data.orderNr;
         }
     }, []); 
     

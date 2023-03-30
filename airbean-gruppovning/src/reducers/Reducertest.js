@@ -1,6 +1,6 @@
 const initialState = {
     order: [],
-    orderNr:[]
+    orderNr: ''
 }
 
 const reducer = (state = initialState, action) => {
@@ -20,7 +20,7 @@ const reducer = (state = initialState, action) => {
         case 'UPDATE_TIME':
             return{
                 ...state,
-                orderNr: state.orderNr = action.payload
+                orderNr: action.payload
             
             }
             default:
