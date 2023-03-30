@@ -1,6 +1,6 @@
 const initialState = {
     order: [],
-    
+    orderNr:[]
 }
 
 const reducer = (state = initialState, action) => {
@@ -12,14 +12,19 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 order: totalOrder
             }
-        /* case 'ADD__TIME':
-            
+        case 'RESET':
             return{
-                ...state.time,
-                time: state.time.concat(action.payload)
-            } */
-        default:
-            return state
-    }
-}
+                ...state,
+                order: state.order = []  
+            }
+        case 'UPDATE_TIME':
+            return{
+                ...state,
+                orderNr: state.orderNr = action.payload
+            
+            }
+            default:
+                return state
+            }
+        }
 export default reducer
