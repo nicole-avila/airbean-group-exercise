@@ -28,3 +28,19 @@
 .button__status {
     background: #FFFFFF;
 }
+
+.noOrder-paragraph {
+    font-family: 'PT Serif', serif;
+    font-weight: 700;
+    font-size: 25px;
+    color: black;
+}
+.noOrder {
+    margin-top: 5rem;
+    padding: 2rem;
+}
+
+.status__img-upsidedown {
+    margin-bottom: 5rem;
+    transform: rotate(180deg);
+}
