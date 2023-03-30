@@ -1,7 +1,5 @@
 import './App.css'
-
 import { RouterProvider, createBrowserRouter, Router } from 'react-router-dom'
-
 import Landing from './views/Landing/Landing'
 import Nav from './views/Nav/Nav'
 import Menu from './views/Menu/Menu'
