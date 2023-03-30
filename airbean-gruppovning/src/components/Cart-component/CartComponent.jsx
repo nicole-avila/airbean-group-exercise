@@ -5,22 +5,18 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { updateTime } from '../../Actions/Actiontest';
 
-
-
 function CartComponent(){
    const order  = useSelector((state) => { return state.order})
    const dispatch = useDispatch();
    let getData = '';
     
     const orderComponent = order.map((order, index)=>{
-    
     return (
         <section className='cart-products' key={index}>
             <h1 className='cart-products-text'  >{order.name}</h1>
             <p className='cart-product-price'>{order.price}kr</p> 
             </section> 
             )
-        
     })
       useEffect(()=>{
 
