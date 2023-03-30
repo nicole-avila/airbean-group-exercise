@@ -7,7 +7,6 @@ import { updateTime } from '../../actions/Actiontest';
 
 
 function CartComponent(){
-
    const order  = useSelector((state) => { return state.order})
    const dispatch = useDispatch();
    let getData = '';
@@ -20,7 +19,7 @@ function CartComponent(){
             <p className='cart-product-price'>{order.price}kr</p> 
             </section> 
             )
-
+        
     })
       useEffect(()=>{
 
