@@ -7,8 +7,8 @@ import { useSelector } from 'react-redux';
 
 function CartComponent(){
 
-   const order  = useSelector((state) => { return state.order})
-    const [orderNumber, setOrder] = useState([]);
+  const order  = useSelector((state) => { return state.order})
+  const [orderNumber, setOrder] = useState([]);
     
     const orderComponent = order.map((order, index)=>{
     
@@ -18,7 +18,7 @@ function CartComponent(){
             <p className='cart-product-price'>{order.price}kr</p> 
             </section> 
             )
-
+        
     })
       useEffect(()=>{
         async function getOrder(){
