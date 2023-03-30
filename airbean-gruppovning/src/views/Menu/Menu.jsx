@@ -5,39 +5,30 @@ import { useEffect } from 'react';
 import MenuComponent from '../../components/menuComponent/MenuComponent';
 import Footer from '../../components/footer/Footer';
 import Header from '../../components/header/Header';
-// import { useNavigate } from 'react-router-dom';
 
 function Menu() {
-  // const navigate = useNavigate();
-
   const [CoffeMenu, setCoffeMenu] = useState([])
 
-      useEffect(()=>{
-        async function apiCoffeMeny(){
-          const resonse = await fetch('https://airbean.awesomo.dev/api/beans/')
-          const  data = await resonse.json()
-          console.log(data.menu)
-          setCoffeMenu(data.menu)
-         
-        }
-        apiCoffeMeny()
-    },[]);
+  useEffect(()=>{
+    async function apiCoffeMeny(){
+      const resonse = await fetch('https://airbean.awesomo.dev/api/beans/')
+      const  data = await resonse.json()
+      setCoffeMenu(data.menu)
+    }
+    apiCoffeMeny()
+  },[]);
 
-    // function navigateToNav(){
-    //   navigate('/nav');
-    // }
+  const Menu = CoffeMenu.map((item)=>{
+    return <MenuComponent  item = { item} key={ item.id}/>
+  })
 
-     const Menu = CoffeMenu.map((item)=>{
-       return <MenuComponent  item = { item} key={ item.id}/>
-     })
-  
-    return (
-        <section className='menu'>
-          <Header/>
-          <h1 className='menuHeader'>Meny</h1>
-          {Menu}
-          <Footer/>
-        </section>
+  return (
+      <section className='menu'>
+        <Header/>
+        <h1 className='menuHeader'>Meny</h1>
+        {Menu}
+        <Footer/>
+      </section>
   )
 }
 

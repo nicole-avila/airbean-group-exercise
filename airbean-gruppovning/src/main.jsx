@@ -7,12 +7,10 @@ import { legacy_createStore } from 'redux';
 import { Provider } from 'react-redux';
 import reducer from './reducers/Reducertest';
 
-
 const store = legacy_createStore(
   reducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() // Används för att få igång våran Redux devtools
 );
-
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

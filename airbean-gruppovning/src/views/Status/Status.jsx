@@ -4,7 +4,7 @@ import drone from '../../assets/graphics/drone.svg'
 import { useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { reset } from '../../actions/Actiontest'
+import { reset } from '../../Actions/Actiontest'
 
 function Status() {
   const navigate = useNavigate();
@@ -14,9 +14,6 @@ function Status() {
 
   const orderNumber = useSelector((state) => { return state.orderNr })
   console.log(orderNumber);
-
-
-
 
   useEffect(() => {
     async function getTime() {
@@ -29,10 +26,9 @@ function Status() {
       getTime()
       console.log('Det finns ingen beställning')
     }
-
   }, [])
-  function goToLanding() {
 
+  function goToLanding() {
     dispatch(reset())
     navigate('/')
   }
@@ -40,7 +36,6 @@ function Status() {
   function backToMenu() {
     navigate('/menu')
   }
-
 
   return (
     <div className='statusBody'>
@@ -58,7 +53,6 @@ function Status() {
           <p className='noOrder-paragraph'>Du har tyvärr ingen pågående order,<br></br> var god lägg en beställning.</p>
           <button onClick={backToMenu} className='button button__status'>Tillbaka</button>
         </div>
-
 
       }
     </div>

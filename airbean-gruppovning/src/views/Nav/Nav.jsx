@@ -17,7 +17,6 @@ function Nav() {
   function goBack(){
     navigate(-1);
   }
-  
       return (
         <>
         <article className='nav-article'>
@@ -26,18 +25,15 @@ function Nav() {
         </header>
 
         <section className='nav-section'>
-
-        <ul>
-          <li onClick= { goToMenu }>Meny</li>
-          <hr />
-          <li onClick={ goToAbout }>Vårt Kaffe</li>
-          <hr />
-          <li onClick= { goToStatus }>Orderstatus</li>
-          <hr />
-        </ul>
-
+          <ul>
+            <li onClick= { goToMenu }>Meny</li>
+            <hr />
+            <li onClick={ goToAbout }>Vårt Kaffe</li>
+            <hr />
+            <li onClick= { goToStatus }>Orderstatus</li>
+            <hr />
+          </ul>
         </section>
-
         </article>
         </>
   )
