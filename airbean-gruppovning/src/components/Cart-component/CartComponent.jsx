@@ -1,14 +1,15 @@
 import './CartComponent.css';
 import React from 'react'
-import { useState } from 'react';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { updateTime } from '../../actions/Actiontest';
+
 
 function CartComponent(){
-
-  const order  = useSelector((state) => { return state.order})
-  const [orderNumber, setOrder] = useState([]);
+   const order  = useSelector((state) => { return state.order})
+   const dispatch = useDispatch();
+   let getData = '';
     
     const orderComponent = order.map((order, index)=>{
     
@@ -21,6 +22,13 @@ function CartComponent(){
         
     })
       useEffect(()=>{
+
+        if (order.length)
+        {
+           getOrder()
+        } else {
+            //lägg till att den hämtar eta?
+        }
         async function getOrder(){
           const body = {
             details: {
@@ -35,26 +43,26 @@ function CartComponent(){
             }
           })
           const data = await response.json();
-          setOrder(data);
+          getData = [data];
         }
-        getOrder();
-      }, []); 
-
-      let totalP = 0
-      function count(){
+    }, []); 
+    
+    let totalP = 0
+    function count(){
         
         order.forEach(order => {
-          totalP = totalP + order.price
-      });
-  
-      }
-      count()
-      console.log(totalP)
-
-      const navigate = useNavigate()
-      function sendOrderNr(){
-        console.log(orderNumber);
-        navigate('/status', {state:{orderNumber: orderNumber}})
+            totalP = totalP + order.price
+        });
+        
+    }
+    count()
+    console.log(totalP)
+    
+    const navigate = useNavigate()
+    function sendOrderNr(){
+        console.log(getData);
+        dispatch(updateTime(getData));
+        navigate('/status')
       }
 
     return(
@@ -64,6 +72,7 @@ function CartComponent(){
             </aside>
             <article className='cart-square'>
                 <h1 className='cart-heading'>Din beställning</h1>
+
               {orderComponent}
                 <article className='cart-container-bottom'>
                     <aside className='cart-total-container'>

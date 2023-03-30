@@ -10,6 +10,12 @@ function reset(value){
         payload: value
     }
 }
+function updateTime(value){
+    return{
+        type: 'UPDATE_TIME',
+        payload: value
+    }
+}
 
 
-export {addProduct, reset}
+export {addProduct, reset, updateTime}
