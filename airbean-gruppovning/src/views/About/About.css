@@ -3,6 +3,8 @@
     max-width: 375px;
     min-height: 1061px;
     background-color: #F3E4E1;
+    position: relative;
+
 }
 .about-section {
     max-width: 375px;

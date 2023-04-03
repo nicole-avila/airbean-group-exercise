@@ -1,3 +1,4 @@
+// Här lägger vi namn och värde till redux store.
 function addProduct(value) {
     return {
         type: 'ADD_PRODUCT',
@@ -17,5 +18,12 @@ function updateTime(value){
     }
 }
 
+function decrease(value){
+    return{
+        type: 'DECREASE',
+        payload: value
+    }
+}
 
-export {addProduct, reset, updateTime}
+
+export {addProduct, reset, updateTime, decrease}

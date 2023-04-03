@@ -14,6 +14,12 @@
     margin-top:2rem;
    
 }
+.cart-products{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding-left:1rem;
+}
 .cart-total{
     font-family: PT Serif;
     font-size: 23px;
@@ -34,16 +40,23 @@
     margin-left: 1rem;
     margin-top:2rem;
 }
-.cart-total-price{
-
-}
 .cart-total-container{
     display: flex;
 
 }
 .cart-dot{
-    border-bottom: 2px dotted rgba(0, 0, 0, 0.434);
-    width: 140px;
+    border-bottom: 2px dotted rgba(0, 0, 0, 0.362);
+    min-width: 145px;
+}
+.cart-dot__product{
+    max-width: 200px;
+    padding:0;
+    margin-top:-0.4rem;
+    
+}
+.cart-products__container{
+    display: flex;
+    flex-direction: row;
 }
 
 .cart-moms-text{
@@ -75,7 +88,7 @@
     letter-spacing: 0em;
     text-align: left;
     color: #2F2926;
-    margin-left: 1rem;
+    margin-left: 3rem;
     margin-top:0.5rem;
 }
 .cart-triangle{
@@ -102,4 +115,16 @@
     flex-direction: column;
     padding:2rem;
     margin-top:6rem;
+}
+.remove-btn{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: black;
+    color:white;
+    border: none;
+    margin-top: 1.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
