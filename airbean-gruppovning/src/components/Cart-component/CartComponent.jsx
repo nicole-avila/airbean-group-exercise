@@ -21,7 +21,9 @@ function CartComponent(){
           
     return (
         <section className='cart-products' key={index}>
-            <h1 className='cart-products-text'  >{order.name}</h1>
+            <article className='cart-products__container'>
+                <h1 className='cart-products-text'  >{order.name}</h1><p className='cart-dot cart-dot__product'></p>
+            </article> 
             <p className='cart-product-price'>{order.price}kr</p> 
             <button onClick={ addCoffe }>add</button>
             <button onClick={ removeCoffe }>remove</button>
@@ -86,7 +88,7 @@ function CartComponent(){
                         <h2 className='cart-total'>Totalt:<p className='cart-dot'></p><span className='cart-total-price'>{totalP}kr</span></h2>
                     </aside>
                     <p className='cart-moms-text'>inkl moms + drönarleverans</p>
-                    <button className='button button__cart' onClick={ sendOrderNr}>Take my money!</button>
+                    <button className='button button__cart' onClick={ sendOrderNr }>Take my money!</button>
                 </article>
             </article>
         </section>

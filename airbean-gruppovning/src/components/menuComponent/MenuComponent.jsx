@@ -8,7 +8,8 @@ function MenuComponent(props){
 
     const order = [{
         name: props.item.title,
-        price: props.item.price
+        price: props.item.price,
+        quantity: 1
     }]
     
     function saveCoffeToStore(){
@@ -21,7 +22,7 @@ function MenuComponent(props){
                     <article onClick={ saveCoffeToStore }><img src={Addbutton} alt="add"  className='menu__img'/> </article>
                     <section className='menu__text'>
                         <section className='menu__titles'>
-                            <h1 className='menu__title'>{props.item.title}</h1>
+                            <h1 className='menu__title '>{props.item.title}</h1>
                            {/*  <span className='menu__dotted'></span> */}
                             <p className='menu__title menu__price'>{props.item.price} kr</p>
                         </section>
