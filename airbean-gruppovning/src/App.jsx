@@ -35,14 +35,11 @@ function App() {
       element: <Status />,
       errorElement: <Error />
     }
-
   ])
 
   return (
     <div className="App">
-
-    <RouterProvider router={ router } />
-
+      <RouterProvider router = { router } />
     </div>
   )
 }

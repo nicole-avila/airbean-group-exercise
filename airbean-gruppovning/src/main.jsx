@@ -1,11 +1,12 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App'
-import './index.css'
+import './index.css';
+import App from './App';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 
+// Allt man behöver för att använda redux store.
+import reducer from './reducers/Reducertest';
 import { legacy_createStore } from 'redux';
 import { Provider } from 'react-redux';
-import reducer from './reducers/Reducertest';
 
 const store = legacy_createStore(
   reducer,
@@ -14,8 +15,8 @@ const store = legacy_createStore(
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Provider store={ store }>
-    <App />
+    <Provider store = { store }>
+      <App />
     </Provider>
   </React.StrictMode>,
 )

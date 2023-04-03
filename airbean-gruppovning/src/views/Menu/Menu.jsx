@@ -1,10 +1,10 @@
 import './Menu.css'
 import React from 'react'
-import { useState } from 'react';
-import { useEffect } from 'react';
-import MenuComponent from '../../components/menuComponent/MenuComponent';
 import Footer from '../../components/footer/Footer';
 import Header from '../../components/header/Header';
+import MenuComponent from '../../components/menuComponent/MenuComponent';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 function Menu() {
   const [CoffeMenu, setCoffeMenu] = useState([])
@@ -19,7 +19,7 @@ function Menu() {
   },[]);
 
   const Menu = CoffeMenu.map((item)=>{
-    return <MenuComponent  item = { item} key={ item.id}/>
+    return <MenuComponent  item = { item } key={ item.id }/>
   })
 
   return (

@@ -1,3 +1,4 @@
+// Här lägger vi namn och värde till redux store.
 function addProduct(value) {
     return {
         type: 'ADD_PRODUCT',
