@@ -4,7 +4,7 @@ import drone from '../../assets/graphics/drone.svg'
 import { useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { reset } from '../../Actions/Actiontest'
+import { reset } from '../../actions/Actiontest'
 
 function Status() {
   const navigate = useNavigate();
