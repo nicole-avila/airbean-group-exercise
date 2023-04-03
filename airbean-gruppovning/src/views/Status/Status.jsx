@@ -24,7 +24,6 @@ function Status() {
     if (orderNumber.length > 0) {
       setIfOrderExist(!ifOrderExist)
       getTime()
-      console.log('Det finns ingen beställning')
     }
   }, [])
 
