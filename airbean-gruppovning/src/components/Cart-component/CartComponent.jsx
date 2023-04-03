@@ -9,12 +9,22 @@ function CartComponent(){
    const order  = useSelector((state) => { return state.order})
    const dispatch = useDispatch();
    let getData = '';
-    
+
+   
     const orderComponent = order.map((order, index)=>{
+        function addCoffe(){
+            console.log(order.price)
+         }
+         function removeCoffe(){
+            
+         }
+          
     return (
         <section className='cart-products' key={index}>
             <h1 className='cart-products-text'  >{order.name}</h1>
             <p className='cart-product-price'>{order.price}kr</p> 
+            <button onClick={ addCoffe }>add</button>
+            <button onClick={ removeCoffe }>remove</button>
             </section> 
             )
     })
