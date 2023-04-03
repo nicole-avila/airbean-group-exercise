@@ -9,7 +9,6 @@ function MenuComponent(props){
     const order = [{
         name: props.item.title,
         price: props.item.price,
-        quantity: 1
     }]
     
     function saveCoffeToStore(){

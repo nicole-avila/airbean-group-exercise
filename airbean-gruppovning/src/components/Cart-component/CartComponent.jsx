@@ -1,48 +1,40 @@
 import './CartComponent.css';
-import React from 'react'
+import React, { useState } from 'react'
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { updateTime } from '../../actions/Actiontest';
-import { addProduct, decrease } from '../../actions/Actiontest';
+import {  decrease } from '../../actions/Actiontest';
 
 function CartComponent(){
    const order  = useSelector((state) => { return state.order})
    const dispatch = useDispatch();
    let getData = '';
+
+    let [orderComponent, setOrderComponent]= useState([])
+    
   
-    const orderComponent = order.map((order, index)=>{
-        function addCoffe(){
-            let newOrder= [{
-                name: order.name,
-                price: order.price
-                     }]
-                     dispatch(addProduct(newOrder))
-                     console.log(order)
-         }
-         function removeCoffe(){
-            let newOrder= [{
-                name: order.name,
-                price: order.price,
-                index: index
-                     }]
-
-           dispatch (decrease(newOrder))
-           console.log(order)
-
-         }
-          
+   function removeCoffe(iD){
+    dispatch (decrease(iD))
+  }
+  let iD = 0
+   useEffect(() => {
+    const orderComponent = order.map((order)=>{
+         iD++
     return (
-        <section className='cart-products' key={index}>
+        <section className='cart-products' key={iD}>
             <article className='cart-products__container'>
                 <h1 className='cart-products-text'  >{order.name}</h1><p className='cart-dot cart-dot__product'></p>
             </article> 
             <p className='cart-product-price'>{order.price}kr</p> 
-            <button onClick={ addCoffe }>add</button>
-            <button onClick={ removeCoffe }>remove</button>
+           
+            <button onClick={()=> removeCoffe(order.iD) }>remove</button>
             </section> 
             )
+         
     })
+        setOrderComponent(orderComponent)
+        },[order])
       useEffect(()=>{
 
         if (order.length)
