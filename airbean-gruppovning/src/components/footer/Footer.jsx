@@ -4,8 +4,8 @@ function Footer() {
 
     return (
         <>
-        <footer className='main-footer'>
-        </footer>
+            <footer className='main-footer'>
+            </footer>
         </>
     )
 }
