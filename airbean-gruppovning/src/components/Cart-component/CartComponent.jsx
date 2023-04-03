@@ -9,26 +9,30 @@ import {  decrease } from '../../actions/Actiontest';
 function CartComponent(){
    const order  = useSelector((state) => { return state.order})
    const dispatch = useDispatch();
-   let getData = '';
+  /*  let getData = ''; */
+
 
     let [orderComponent, setOrderComponent]= useState([])
+    let [getData, setData]= useState([])
+    console.log(getData)
     
-  
-   function removeCoffe(iD){
-    dispatch (decrease(iD))
+   function removeCoffe(id){
+    dispatch (decrease(id))
   }
-  let iD = 0
+ /*  let iD = 0 */
    useEffect(() => {
-    const orderComponent = order.map((order)=>{
-         iD++
+    const orderComponent = order.map((order, index)=>{
+        const id = index + 1;
+        order.id = id;
+       /*   iD++ */
     return (
-        <section className='cart-products' key={iD}>
+        <section className='cart-products' key={id}>
             <article className='cart-products__container'>
                 <h1 className='cart-products-text'  >{order.name}</h1><p className='cart-dot cart-dot__product'></p>
             </article> 
             <p className='cart-product-price'>{order.price}kr</p> 
            
-            <button onClick={()=> removeCoffe(order.iD) }>remove</button>
+            <button onClick={()=> removeCoffe(order.id) } className="remove-btn">x</button>
             </section> 
             )
          
@@ -41,7 +45,7 @@ function CartComponent(){
         {
            getOrder()
         } else {
-            //lägg till att den hämtar eta?
+    
         }
         async function getOrder(){
           const body = {
@@ -58,6 +62,7 @@ function CartComponent(){
           })
           const data = await response.json();
           getData = data.orderNr;
+          setData(getData)
         }
     }, []); 
     

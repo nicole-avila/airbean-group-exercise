@@ -116,3 +116,15 @@
     padding:2rem;
     margin-top:6rem;
 }
+.remove-btn{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: black;
+    color:white;
+    border: none;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
