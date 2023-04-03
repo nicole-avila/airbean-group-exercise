@@ -3,20 +3,33 @@ import React from 'react'
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { updateTime } from '../../Actions/Actiontest';
+import { updateTime } from '../../actions/Actiontest';
+import { addProduct, decrease } from '../../actions/Actiontest';
 
 function CartComponent(){
    const order  = useSelector((state) => { return state.order})
    const dispatch = useDispatch();
    let getData = '';
-
-   
+  
     const orderComponent = order.map((order, index)=>{
         function addCoffe(){
-            console.log(order.price)
+            let newOrder= [{
+                name: order.name,
+                price: order.price
+                     }]
+                     dispatch(addProduct(newOrder))
+                     console.log(order)
          }
          function removeCoffe(){
-            
+            let newOrder= [{
+                name: order.name,
+                price: order.price,
+                index: index
+                     }]
+
+           dispatch (decrease(newOrder))
+           console.log(order)
+
          }
           
     return (
