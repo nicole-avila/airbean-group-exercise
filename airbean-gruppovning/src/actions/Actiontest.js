@@ -17,5 +17,19 @@ function updateTime(value){
     }
 }
 
+function increase(value){
+    return{
+        type: 'INCREASE_AMOUNT',
+        payload: value
+    }
+}
 
-export {addProduct, reset, updateTime}
+function decrease(value){
+    return{
+        type: 'DECREASE_AMOUNT',
+        payload: value
+    }
+}
+
+
+export {addProduct, reset, updateTime, decrease, increase}

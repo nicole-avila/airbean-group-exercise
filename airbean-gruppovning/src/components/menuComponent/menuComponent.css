@@ -36,6 +36,7 @@
 }
 .menu__section{
     display: flex;
+    width: 100%;
 }
 .menu__price{
     margin-left: auto;

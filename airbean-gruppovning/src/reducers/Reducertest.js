@@ -23,6 +23,18 @@ const reducer = (state = initialState, action) => {
                 orderNr: action.payload
             
             }
+        case 'INCREASE':
+            const updateAmount = state.order.push(action.payload);
+            console.log(updateAmount);
+            return{
+                ...state,
+                order: updateAmount
+            }
+        case 'DECREASE':
+            return{
+                ...state,
+                order: state.order - action.payload
+            }
             default:
                 return state
             }
