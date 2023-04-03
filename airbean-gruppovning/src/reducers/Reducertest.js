@@ -25,21 +25,19 @@ const reducer = (state = initialState, action) => {
                 orderNr: action.payload
             
             }
-        case 'INCREASE':
-            const updateAmount = state.order.push(action.payload);
-            console.log(updateAmount);
-            return{
-                ...state,
-                order: updateAmount
-            }
+       
         case 'DECREASE':
 
-            const newCart = order.splice(action.payload.index, 1);
+            const index = state.order.findIndex((order)=> order.iD === action.payload)
+
+            const newCart = [...state.order];
+            newCart.splice(index, 1)
             return{
                 ...state,
                 order: newCart
-            
+
             }
+
             default:
                 return state
             }
